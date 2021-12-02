@@ -98,7 +98,7 @@ body{
   line-height: 56px;
   border-radius: 50px;
   color: #FFFFFF;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .Lower_text{
@@ -472,5 +472,11 @@ body{
   background: rgb(255, 148, 214);
   box-shadow: 1px 1px 1px rgb(252, 41, 171);
   transform: translateY(2px);
+  }
+
+  .user_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
