@@ -168,7 +168,7 @@ body{
 
 }
 
-.ab_proj, .feedback, .contacts, .log{
+.ab_proj, .feedback, .contacts, .log, .logout{
   font-size: 36px;
   line-height: 30px;
   color: #FFFFFF;
@@ -479,4 +479,3 @@ body{
     flex-direction: column;
     align-items: center;
   }
-  

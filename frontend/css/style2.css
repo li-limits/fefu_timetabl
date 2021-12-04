@@ -16,6 +16,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
 .avatar{
   width: 400px;
   height: 400px;
@@ -73,6 +74,7 @@
   text-align: center;
   color: #000000;
   background: #F5CBAD; 
+  margin-left: 50px;
 }
 .form_pass{
   font-size: 36px;

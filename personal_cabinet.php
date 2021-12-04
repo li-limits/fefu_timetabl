@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,10 +32,10 @@
 					  </div>
 					  <div class="user_data">
 						  <div class="udata_wrap">
-							  <span class="ustate">Статус:<?php echo("default_user")?></span>
-							  <span class="ufname">Имя: <?php echo"Привет"?></span>
-							  <span class="usname">Фамилия: <?php echo "Привет"?></span>
-							  <span class="uemail">email: <?php echo "privet@students.dvfu.ru"?></span>
+							  <span class="ustate">Статус: <?php echo($_SESSION['status'])?></span>
+							  <span class="ufname">Имя: <?php echo ($_SESSION['name'])?></span>
+							  <span class="usname">Фамилия: <?php echo ($_SESSION['surname'])?></span>
+							  <span class="uemail">email: <?php echo ($_SESSION['login'])?></span>
 						  </div>
 					  </div>
                     </div>

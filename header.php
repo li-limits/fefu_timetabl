@@ -14,9 +14,17 @@
 				<div class="top-contacts">
 					<a href="" class="contacts">Контакты</a>
 				</div>
-				<div class="top-log-in">
-					<a href="#" class="log">Войти</a>
-				</div>
+				<?php if ($_SESSION['name'] == NULL){
+				echo("<div class='top-log-in'>
+					<a href='#' class='log'>Войти</a>
+				</div>");
+				}
+				else {
+					echo("<div class='top-log-in'>
+					<a href='backend/logout.php' class='logout'>Выход</a>
+				</div>");
+				}
+				?>
 			</div>
 		</div>
 	</div>
