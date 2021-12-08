@@ -9,14 +9,14 @@
 					<a href="#about" class="ab_proj">О проекте</a>
 				</div>
 				<div class="top-feedback">
-					<a href="#main_4" class="feedback">Отзывы</a>
+					<a href="feedback_page.php" class="feedback">Отзывы</a>
 				</div>
 				<div class="top-contacts">
 					<a href="" class="contacts">Контакты</a>
 				</div>
 				<?php if ($_SESSION['name'] == NULL){
 				echo("<div class='top-log-in'>
-					<a href='#' class='log'>Войти</a>
+					<a href='' class='log'>Войти</a>
 				</div>");
 				}
 				else {

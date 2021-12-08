@@ -31,9 +31,4 @@ $(document).ready(function() {
       $('#overlay').fadeOut(297);
     });
   });
-
-  $('#login_button').click( function() {
-    var user_login = document.getElementById("login_field").value;
-    alert(user_login);
-  })
 });
