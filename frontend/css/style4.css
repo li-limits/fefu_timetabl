@@ -1,0 +1,140 @@
+.top_butt{
+	width: 100%;
+	height: 96px;
+}
+
+.wrapper_m {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100hv;
+  background-color: white;
+}
+
+.top_butt_wrap{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: raw;
+	justify-content: space-between;
+
+}
+
+.butt_m{
+	width: 200px;
+	height: 40px;
+	font-size: 24px;
+	line-height: 28px;
+	color: #FFFFFF;
+	/*-webkit-text-stroke-width: 1px solid #000000;*/
+	background-color: #FA759E;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	border-radius: 10px;
+}
+
+.butt_m:hover{
+	background-color: #9e4f67;
+	cursor: pointer;
+}
+
+.top_butt_left{
+	display: flex;
+	flex-direction: raw;
+	justify-content: space-between;
+	width: 60%;
+	padding: 30px;
+	margin-right: 20px;
+}
+
+.top_butt_right{
+	display: flex;
+	flex-direction: raw;
+	justify-content: space-between;
+	width: 40%;
+	padding: 30px;
+}
+
+.main_block_of_schdl{
+	width: 100%;
+	height: 900px;
+}
+
+.main_block_of_schdl_wrap{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: raw;
+}
+
+.class_cont{
+	width: 14.7%;
+	height: 100%;
+	border-top: 5px solid #F5CBAD;
+	border-right: 5px solid #F5CBAD;
+}
+#class_cont_last{
+	border-right: 0;
+}
+
+.class_cont_top{
+	width: 100%;
+	height: 80px;
+	border-bottom: 5px solid #F5CBAD;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.class_cont_top_date{
+	font-size: 24px;
+	line-height: 28px;
+	color: black;
+}
+
+.class_cont_main{
+	width: 100%;
+	height: 100%;
+}
+
+.class_cont_main_wrap{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.para{
+	width: 100%;
+	height: 110px;
+	background-color: #6DC9F7;
+	border-radius: 10px;
+	margin-top: 2px;
+}
+
+.week_buutons{
+	display: flex;
+	flex-direction: raw;
+}
+
+#butt_prev{
+	padding-right: 20px;
+}
+
+#butt_next{
+	padding-left: 20px;
+}
+
+#prev_tri{
+	border: 20px solid transparent;
+	border-right: 20px solid whitesmoke;
+}
+
+#next_tri{
+	border: 20px solid transparent;
+	border-left: 20px solid whitesmoke;
+}
