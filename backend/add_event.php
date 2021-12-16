@@ -11,8 +11,6 @@ $date = $_POST['event_date'];
 $event_start = $_POST['event_start'];
 $event_end = $_POST['event_end'];
 
-echo($event_start);
-
 $sql = "INSERT INTO `events` (user_id, event_name, event_date, event_start, event_end, event_period, event_place, event_description) VALUES (:user_id,
 :event_name, :event_date, :event_start, :event_end, :event_period, :event_place, :event_description)";
 $result = $conn->prepare($sql);
@@ -45,7 +43,8 @@ $result = $conn->prepare($sql);
 $result->execute(array(':event_id' => $event_id));
 $row = $result->fetch();
 
-echo json_encode(array('event_name' => $event_name, 'event_place' => $event_place, 'event_time_start' => $event_start,
+header("Content-Type: application/json; charset=utf-8", true);
+echo json_encode(array('event_id' => $event_id, 'event_name' => $event_name, 'event_place' => $event_place, 'event_time_start' => $event_start,
                         'event_time_end' => $event_end, 'event_description' => $description, 'event_date' => $date, 'event_period' => $period,
                         'event_tag_1' => $row['tag_1'], 'event_tag_2' => $row['tag_2'], 'event_tag_3' => $row['tag_3'], 'event_tag_4' => $row['tag_4']));
 ?>

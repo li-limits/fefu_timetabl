@@ -1,5 +1,8 @@
-<?php
-session_start();
+<?php session_start(); 
+$_SESSION['week_counter'] = 0;
+if ($_SESSION['user_id'] == NULL) {
+	header("Location:/index.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,28 +29,34 @@ session_start();
 		<div class="main_block">
 			<div class="foot_wrap">
 				<div class="lk_left">
-					<div class="user_wrap">
-					  <div class="avatar">
+					<?php
+					include 'backend/dbconnect.php';
+					$user_id = $_SESSION['user_id'];
+					$sql = "SELECT * FROM `users` WHERE id = :user_id";
+					$result = $conn->prepare($sql);
+					$result->execute(array(':user_id' => $user_id));
+					$row = $result->fetch();
+					?>
+					<div class="avatar">
 						
-					  </div>
-					  <div class="user_data">
-						  <div class="udata_wrap">
-							  <span class="ustate">Статус: <?php echo($_SESSION['status'])?></span>
-							  <span class="ufname">Имя: <?php echo ($_SESSION['name'])?></span>
-							  <span class="usname">Фамилия: <?php echo ($_SESSION['surname'])?></span>
-							  <span class="uemail">email: <?php echo ($_SESSION['login'])?></span>
-						  </div>
-					  </div>
-                    </div>
+					</div>
+					<div class="user_data">
+						<div class="udata_wrap">
+							<span class="ustate">Статус: <?php echo($row['status']); ?></span>
+							<span class="ufname">Имя: <?php echo($row['name']); ?></span>
+							<span class="usname">Фамилия: <?php echo($row['surname']); ?></span>
+							<span class="uemail">email: <?php echo($row['login']); ?></span>
+						</div>
+					</div>
 					<div class="helper_lk"></div>
 				</div>
 				<div class="lk_right">
 					<div class="change_pass">
 						<span class="change_pass_topic">Смена пароля</span>
-						<form method="post" class="form_pass">
-							<input class="change_pass_input" type="text" name="old_pass" placeholder="Старый пароль" ></br>
-							<input class="change_pass_input" type="text" name="new_pass" placeholder="Новый пароль" ></br>
-							<input type="submit" class="butt_accept" value="Подтвердить"></div>
+						<form method="" class="form_pass">
+							<input type="text" name="old_pass" placeholder="введите старый пароль" ></br>
+							<input type="text" name="new_pass" placeholder="введите новый пароль" ></br>
+							<div type="submit" class="butt_accept"> Подтвердить </div>
 						</form>
 					</div>
 				</div>
@@ -55,6 +64,7 @@ session_start();
 		</div>
 
 		<?php include "footer.php"?>
+		<script src="frontend/js/javascript.js"></script>
 	</div>
 </body>
 </html>

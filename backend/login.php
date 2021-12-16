@@ -11,18 +11,15 @@ $result = $conn->prepare($sql);
 $result->execute(array(':login' => $user_login));
 $row = $result->fetch();
 if ($row){
-	if (password_verify($user_pass, row['password'])) {
-		echo 'Password is valid!';
-	} else {
-		echo 'Invalid password.';
+	if (password_verify($user_pass, $row['password']))
+	{
+		$_SESSION['user_id'] = $row['id'];
+		$_SESSION['week_counter'] = 0;
+		$_SESSION['user_status'] = $row['status'];
+		echo('0');
 	}
-	$_SESSION['name'] = $row['name'];
-	$_SESSION['surname'] = $row['surname'];
-	$_SESSION['login'] = $row['login'];
-	$_SESSION['status'] = $row['status'];
-	header("Location:../");
 }
 else {
-	echo("$hashpass");
+	echo(1);
 }
 ?>

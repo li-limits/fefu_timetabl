@@ -1,5 +1,8 @@
-<?php
-session_start();
+<?php 
+session_start(); 
+if ($_SESSION['user_id'] != NULL){
+	header("Location:/main_func.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,13 +21,12 @@ session_start();
 	
 </head>
 <body>
-	<script src="frontend/js/script.js"></script>
 	<div class="wrapper">
 		<header class="header"> 
-			<?php include"header.php"?>
+			<?php include "header.php"?>
 			<?php include "frontend/html/login_window.html"; ?>
 			<?php include "frontend/html/newacc_window.html"; ?>
-			<div id="overlay"></div>
+			<div class="overlay"></div>
 			<div class="banner">
 				<div class="contain-2">
 					<div class="banner-w">

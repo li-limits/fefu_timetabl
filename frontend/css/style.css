@@ -2,7 +2,7 @@ body{
   margin: 0;
   line-height: 1.6;
   font-family: 'Roboto', sans-serif;
-  height: 100%;
+  min-height: 100%;
 }
 
 html{
@@ -14,7 +14,7 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+.header a:hover {
   text-decoration: underline;
 }
 
@@ -28,7 +28,6 @@ body{
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  position: relative;
   min-height: 100hv;
 }
 
@@ -98,7 +97,7 @@ body{
   line-height: 56px;
   border-radius: 50px;
   color: #FFFFFF;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .Lower_text{
@@ -156,7 +155,7 @@ body{
   color: #FFFFFF;
 }
 .top-right{
-  width: 50%;
+  width: 60%;
   font-size: 36px;
   line-height: 30px;
   color: #FFFFFF;
@@ -168,7 +167,7 @@ body{
 
 }
 
-.ab_proj, .feedback, .contacts, .log, .logout{
+.ab_proj, .feedback, .contacts, .log, .logout, .personal_cabinet_link {
   font-size: 36px;
   line-height: 30px;
   color: #FFFFFF;
@@ -374,7 +373,7 @@ body{
   color: white;
   }
   
-  #login_close, #newacc_close {
+  #login_close, #newacc_close, #review_form_close {
   width: 21px; height: 21px;
   position: absolute;
   font-size: 44px;
@@ -383,7 +382,7 @@ body{
   display: block;
   }
   
-  #overlay {
+  .overlay {
   z-index: 37;
   position: fixed;
   background: rgba(0,0,0,.7);
@@ -472,10 +471,4 @@ body{
   background: rgb(255, 148, 214);
   box-shadow: 1px 1px 1px rgb(252, 41, 171);
   transform: translateY(2px);
-  }
-
-  .user_wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }

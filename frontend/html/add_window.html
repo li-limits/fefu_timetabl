@@ -1,3 +1,6 @@
+<?php 
+$today = date("Y-m-d");
+?>
 <div class='add_window'>
     <b>Добавить событие</b>
     <span id="add_window_close">ₓ</span>
@@ -5,7 +8,7 @@
     <form class='add_form' method='post'>
         <div class='add_window_line'>
             <b>Название: </b>
-            <input type='text' required name='event_name' size='34' maxlength='40'></input>
+            <input type='text' required name='event_name' size='34' maxlength='35'></input>
         </div>
         <div class='checkboxes_field'><b>Пометки: </b>
             <div class='checkboxes'>
@@ -29,7 +32,7 @@
         </div>
         <div class='add_window_line'>
             <b>Дата: </b>
-            <input type='date' required name='event_date'></input>
+            <?php echo("<input type='date' required name='event_date' min='$today'></input>"); ?>
         </div>
         <div class='add_window_line'>
             <b>Время: </b>
@@ -47,12 +50,13 @@
         </div>
         <div class='add_window_line'>
             <b>Место проведения: </b>
-            <input type='text' name='event_place' size='24' maxlength='35'></input>
+            <input type='text' name='event_place' size='24' maxlength='20'></input>
         </div>
         <div class='add_window_line'>
             <b>Описание: </b>
-            <textarea name='description' cols='32' rows='3' maxlength='250'></textarea>
+            <textarea name='description' cols='32' rows='3' maxlength='150'></textarea>
         </div>
         <input type='submit' id='add_button' value='Добавить!'></input>
     </form>
+    <b id='add_result'></b>
 </div>

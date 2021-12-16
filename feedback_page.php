@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['week_counter'] = 0;
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,11 +24,14 @@ session_start();
 	<script src="frontend/js/script.js"></script>
 	<div class="wrapper">
 		<?php include "header.php"?>
-
+		<?php include "frontend/html/login_window.html"; ?>
+		<?php include "frontend/html/newacc_window.html"; ?>
+		<div class='overlay'></div>
 		<div class="wrapper_lk">
 			<div class="top_main">
 				<div class="wrap_top_main">
-					<div class="button">Оставить отзыв</div>
+					<div class="button" id='review_button'>Оставить отзыв</div>
+					<?php include 'frontend/html/write_review_form.html'; ?>
 					<div class="h1_feed">Отзывы о сайте</div>
 					<div class="button">Фильтры</div>
 				</div>
@@ -43,5 +47,6 @@ session_start();
 		<?php include "footer.php"?>
 	</div>
 	<script src="frontend/js/javascript.js"></script>
+	<script src="frontend/js/feedback_page_script.js"></script>
 </body>
 </html>

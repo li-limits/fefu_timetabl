@@ -16,7 +16,6 @@
   flex-direction: column;
   justify-content: space-between;
 }
-
 .avatar{
   width: 400px;
   height: 400px;
@@ -30,7 +29,6 @@
   height: 430px;
   background-color: #F5CBAD;
   border-radius: 60px;
-  margin-top: 30px;
 }
 .udata_wrap{
   width: 100%;
@@ -52,38 +50,26 @@
   background-color: rgba(255, 255, 255, 0);
 }
 .butt_accept{
-  width: 220px;
-  height: 45px;
+  width: 340px;
+  height: 65px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  background-color: #f79d5d;
+  background-color: #F5CBAD;
   border-radius: 40px;
-  margin-top: 25px;
 }
 .change_pass{
   font-size: 36px;
-  width: 320px;
-  height: 230px;
   line-height: 42px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   color: #000000;
-  background: #F5CBAD; 
-  margin-left: 50px;
 }
 .form_pass{
   font-size: 36px;
   line-height: 42px;
   color: #000000;
-}
-
-.change_pass_input {
-  height: 28px;
-  width: 200px;
-  border-radius: 10px;
 }
