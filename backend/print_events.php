@@ -32,15 +32,10 @@ function print_events(PDO $conn, $event_date, $user_id){
                 <b>".$row['event_place']."</b>
         </div>
         <div class='add_window_line'>
-                <b>Метки: </b>
-                <b>Цвета..</b>
-        </div>
-        <div class='add_window_line'>
                 <b>Описание: </b>
                 <div class='description'><a>".$row['event_description']."</a></div>
         </div>
-        <div class='add_window_line'>
-                <input type='button' class='event_edit_button' id='event_edit_button-".$row['event_id']."' value='Редактировать'></input>
+        <div class='add_window_line' style='justify-content: flex-end'>
                 <input type='button' class='event_delete_button' id='event_delete_button-".$row['event_id']."' required name='event_name' size='34' maxlength='40' value='Удалить'></input>
         </div>
     </div>");

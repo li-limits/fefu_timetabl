@@ -32,8 +32,8 @@ $_SESSION['week_counter'] = 0;
 				<div class="wrap_top_main">
 					<div class="button" id='review_button'>Оставить отзыв</div>
 					<?php include 'frontend/html/write_review_form.html'; ?>
-					<div class="h1_feed">Отзывы о сайте</div>
-					<div class="button">Фильтры</div>
+					<div class="h1_feed" style='margin-right: 400px'>Отзывы о сайте</div>
+					<?php //<div class="button">Фильтры</div> ?>
 				</div>
 				<div class="line_help"></div>
 			</div>

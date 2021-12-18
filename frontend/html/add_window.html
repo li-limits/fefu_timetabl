@@ -10,7 +10,7 @@ $today = date("Y-m-d");
             <b>Название: </b>
             <input type='text' required name='event_name' size='34' maxlength='35'></input>
         </div>
-        <div class='checkboxes_field'><b>Пометки: </b>
+        <?php /*<div class='checkboxes_field'><b>Пометки: </b>
             <div class='checkboxes'>
                 <div class='add_window_lineX'>
                     <input type='checkbox' name='event_tag[]' value='1'></input>
@@ -29,7 +29,7 @@ $today = date("Y-m-d");
                     <label for='event_tag4'>Самоподготовка</label>
                 </div>
             </div>
-        </div>
+        </div>*/ ?>
         <div class='add_window_line'>
             <b>Дата: </b>
             <?php echo("<input type='date' required name='event_date' min='$today'></input>"); ?>

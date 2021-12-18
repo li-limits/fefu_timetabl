@@ -46,7 +46,7 @@ if ($_SESSION['user_id'] == NULL){
 						</div>
 					</div>
 					<div class="top_butt_right">
-						<div class="butt_m" id="filters" style="width: 150px">Фильтры</div>
+						<?php //<div class="butt_m" id="filters" style="width: 150px">Фильтры</div> ?>
 					</div>
 				</div>
 			</div>
@@ -145,6 +145,7 @@ if ($_SESSION['user_id'] == NULL){
 						</div>
 					</div>
 				</div>
+				<script src='frontend/js/event_scripts.js'></script>
 			</div>
 		</div>
 

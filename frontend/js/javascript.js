@@ -94,7 +94,7 @@ $(document).ready(function() {
     });
 
     request.done(function(response, textStatus, jqXHR){
-      $($event_box).remove();
+      $(".main_block_of_schdl").load(location.href + " .main_block_of_schdl");
       $('.overlay').click();
       setTimeout(
         function() 
@@ -146,7 +146,6 @@ $(document).ready(function() {
     });
   });
 
-
   $(".newacc_field").submit(function(event){
     event.preventDefault();
 
@@ -186,7 +185,6 @@ $(document).ready(function() {
       url: "/backend/add_event.php",
       type: "post",
       data: serData,
-      dataType: "json",
       success:function(data){
         $('#add_result').html("Событие успешно добавлено!");
       }
@@ -208,7 +206,8 @@ $(document).ready(function() {
       type:'post',
       data: {tri:'next'},
       success:function(response){
-        $(".main_block_of_schdl").load(location.href + " .main_block_of_schdl");
+        //$(".main_block_of_schdl").load(location.href + " .main_block_of_schdl");
+        location.reload();
       }
     })
   })
@@ -220,7 +219,8 @@ $(document).ready(function() {
       type:'post',
       data: {tri:'prev'},
       success:function(response){
-        $(".main_block_of_schdl").load(location.href + " .main_block_of_schdl");
+        //$(".main_block_of_schdl").load(location.href + " .main_block_of_schdl");
+        location.reload();
       }
     })
   })
@@ -231,7 +231,8 @@ $(document).ready(function() {
       type:'post',
       data: {tri:'current'},
       success:function(response){
-        $(".main_block_of_schdl").load(location.href + " .main_block_of_schdl");
+        //$(".main_block_of_schdl").load(location.href + " .main_block_of_schdl");
+        location.reload();
       }
     })
   })
