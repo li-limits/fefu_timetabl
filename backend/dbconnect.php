@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'test_for_buttons';
+$dbname = 'fefu_timetable';
 $username = 'root';
 $password = '';
 
