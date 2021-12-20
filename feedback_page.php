@@ -40,7 +40,6 @@ $_SESSION['week_counter'] = 0;
 			<div class="feed_content">
 				<div class="feed_content_wrapper">
 					<?php include "review.php"?>
-					<?php include "review.php"?>
 				</div>
 			</div>
 		</div>

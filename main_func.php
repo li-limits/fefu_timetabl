@@ -3,7 +3,7 @@ include 'backend/dbconnect.php';
 
 session_start();
 if ($_SESSION['user_id'] == NULL){
-	header("Location:/index.php");
+	header("Location:/fefu_timetable/index.php");
 }
 
 ?>

@@ -1,7 +1,7 @@
 <?php 
 session_start(); 
 if ($_SESSION['user_id'] != NULL){
-	header("Location:/main_func.php");
+	header("Location:/fefu_timetable/main_func.php");
 }
 ?>
 <!DOCTYPE html>

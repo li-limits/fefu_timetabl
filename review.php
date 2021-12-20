@@ -1,29 +1,69 @@
-<div class="review">
-	<div class="author_review">
-		<div class="author_review_wrap">
-			<div class="users_pic"></div>
-			<div class="review_data">
-				<div class="review_data1">
-					<div>Имя пользователя:</div>
-					<div>php code</div>
-				</div>
-				<div class="review_data2">
-					<div>Дата:</div>
-					<div>php code</div>
-				</div>
-				<div class="review_data3">
-					<div>Время:</div>
-					<div>php code</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="text_review_wrap">
-		<div class="text_review">
-			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
-		</div>
-		<?php if ($_SESSION['user_status'] == 'Администратор'){
-			echo("<div class='del_butt'>Удалить сообщение</div>");
-		 } ?>
-	</div>
-</div>
+<?php
+    session_start(); 
+    $user_id = $_SESSION['user_id'];
+	include "backend/dbconnect.php";
+	
+	$sql = "SELECT COUNT(*) as count FROM `feedback`";
+	$result = $conn->prepare($sql);
+    $result->execute(array(':feedback_id' => $user_id));
+    $cout = $result->fetch();
+    
+    $sql = "SELECT * FROM `feedback`";
+	$result = $conn->prepare($sql);
+    $result->execute(array(':feedback_id' => $user_id));
+    $ids = $result->fetch();
+
+
+	for($i = 1; $i <= $cout[0]; $i++){
+	    $id = $ids['feedback_id'];
+	
+        $sql = "SELECT * FROM `feedback` WHERE feedback_id = :feedback_id";
+        $result = $conn->prepare($sql);
+        $result->execute(array(':feedback_id' => $i));
+        $row = $result->fetch();
+        $text = $row["feedback_text"];
+        $date = $row["feedback_date"];
+		$time = $row["feedback_time"];
+		$allowed = $row["feedback_allowed"];
+		
+        $sql = "SELECT * FROM `users` WHERE id = :user_id";
+        $result = $conn->prepare($sql);
+        $result->execute(array(':user_id' => $i));
+        $user = $result->fetch();
+        $name = $user['name'];
+        $surname = $user['surname'];
+        
+		echo("<div class='review'>
+					<div class='author_review'>
+						<div class='author_review_wrap'>
+							<div id='image$i' class='avatar'><style>
+                                #image$i{
+                                    background-image: url(http://teamapi.limits.digital/fefu_timetable/avatar/$i.png);
+                                }
+                                </style>
+                            </div>
+							<div class='review_data'>
+								<div class='review_data1'>
+									<div>Имя пользователя:</div>
+									<div>$name $surname</div>
+								</div>
+								<div class='review_data2'>
+									<div>Дата:</div>
+									<div>$date</div>
+								</div>
+								<div class='review_data3'>
+									<div>Время:</div>
+									<div>$time</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='text_review_wrap'>
+						<div class='text_review'>
+							".$text."
+						</div>
+					</div>
+				</div>");
+
+	}
+?>
