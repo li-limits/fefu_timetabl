@@ -60,13 +60,18 @@
 }
 
 .feed_content{
+	/*height: 800px;*/
+	width: 100%;
 	margin-top: 30px;
+}
+.feed_content_wrapper{
+	width: 100%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
-
 .review{
 	min-height: 400px;
 	width: 95%;

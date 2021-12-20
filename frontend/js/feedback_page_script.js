@@ -23,7 +23,7 @@ $(document).ready(function(){
         $inputs.prop("disabled", true);
 
         var request = $.ajax({
-            url:'/backend/write_review.php',
+            url:'backend/write_review.php',
             type:'post',
             data:serData,
             success:function(response){

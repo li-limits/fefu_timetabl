@@ -24,4 +24,22 @@ else {
     $result->execute(array(':name' => $user_name, ':surname' => $user_surname, ':login' => $user_login, ':password' => $hashpass, ':status' => $status));
     echo("Аккаунт успешно зарегистрирован!");
 }
+
+$sql = "SELECT * FROM `users` WHERE login = :login";
+$result = $conn->prepare($sql);
+$result->execute(array(':login' => $user_login));
+$row = $result->fetch();
+if ($row){
+	if (password_verify($user_pass, $row['password']))
+	{
+		$_SESSION['user_id'] = $row['id'];
+		$_SESSION['week_counter'] = 0;
+		$_SESSION['user_status'] = $row['status'];
+		echo('0');
+	}
+}
+else {
+	echo(1);
+}
+
 ?>

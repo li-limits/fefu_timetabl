@@ -6,7 +6,7 @@ body{
 }
 
 html{
-  /*background-image: url(../../images/background.svg);*/
+  /*background-image: url(../../images/background.jpg);*/
   /*height: 5000px;/*4555px;*/
 }
 
@@ -39,7 +39,7 @@ body{
   display: flex;
   flex-direction: column;
   min-height: 100hv;
-  background-image: url(../../images/background.svg);
+  background-image: url(../../images/background.jpg);
 }
 
 .contain  {

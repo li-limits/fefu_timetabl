@@ -12,7 +12,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     var request = $.ajax({
-      url: "/backend/logout.php",
+      url: "backend/logout.php",
     });
 
     request.done(function(response, textStatus, jqXHR){
@@ -88,7 +88,7 @@ $(document).ready(function() {
     $button.prop("disabled", true);
 
     var request = $.ajax({
-      url:'/backend/delete_event.php',
+      url:'backend/delete_event.php',
       type: 'post',
       data: {id:$num}
     });
@@ -123,7 +123,7 @@ $(document).ready(function() {
     $inputs.prop("disabled", true);
 
     var request = $.ajax({
-      url: "/backend/login.php",
+      url: "backend/login.php",
       type: "post",
       data: serData
     });
@@ -155,7 +155,7 @@ $(document).ready(function() {
     $inputs.prop("disabled", true);
 
     var request = $.ajax({
-      url: "/backend/newacc_create.php",
+      url: "backend/newacc_create.php",
       type: "post",
       data: serData
     });
@@ -182,7 +182,7 @@ $(document).ready(function() {
     $inputs.prop("disabled", true);
 
     var request = $.ajax({
-      url: "/backend/add_event.php",
+      url: "backend/add_event.php",
       type: "post",
       data: serData,
       success:function(data){
@@ -202,7 +202,7 @@ $(document).ready(function() {
   $('#butt_next').click(function(){
 
     var request = $.ajax({
-      url: '/backend/week_counter_set.php',
+      url: 'backend/week_counter_set.php',
       type:'post',
       data: {tri:'next'},
       success:function(response){
@@ -215,7 +215,7 @@ $(document).ready(function() {
   $('#butt_prev').click(function(){
 
     var request = $.ajax({
-      url: '/backend/week_counter_set.php',
+      url: 'backend/week_counter_set.php',
       type:'post',
       data: {tri:'prev'},
       success:function(response){
@@ -227,7 +227,7 @@ $(document).ready(function() {
 
   $('#week').click(function(){
     var request = $.ajax({
-      url: '/backend/week_counter_set.php',
+      url: 'backend/week_counter_set.php',
       type:'post',
       data: {tri:'current'},
       success:function(response){
